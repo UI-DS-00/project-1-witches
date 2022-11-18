@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-/.gradle/
-=======
 *.iml
 .gradle
 /local.properties
@@ -16,7 +13,3 @@
 .externalNativeBuild
 .cxx
 local.properties
-/gradle/wrapper/gradle-wrapper.properties
->>>>>>> main
-/.idea/
-/gradle/
