@@ -1,4 +1,4 @@
 package logic.imdb
 
-class Account {
+class Account (var z:String){
 }
