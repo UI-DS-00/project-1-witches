@@ -19,6 +19,7 @@ class StartActivity2 : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
+
         var textArray = arrayOf(
             "Movies",
             "TV Shows",
