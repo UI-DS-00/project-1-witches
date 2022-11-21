@@ -1,4 +1,5 @@
 package logic.imdb
 
-class CommentMovie {
+class Reply (){
+
 }
