@@ -9,7 +9,7 @@ import com.example.imdb.databinding.ActivityStart2Binding
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var binding : ActivityMainBinding
+    private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,8 +19,7 @@ class MainActivity : AppCompatActivity() {
         replaceFragment(HomeFragment())
 
         binding.bottomNavigationView.setOnItemSelectedListener {
-            when(it.itemId)
-            {
+            when (it.itemId) {
                 R.id.home_icon -> replaceFragment(HomeFragment())
                 R.id.profile_icon -> replaceFragment(ProfileFragment())
                 R.id.search_icon -> replaceFragment(SearchFragment())
@@ -31,9 +30,7 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-
-    private fun replaceFragment(fragment: Fragment)
-    {
+    private fun replaceFragment(fragment: Fragment) {
         val fragmentManager = supportFragmentManager
         val fragmentTransaction = fragmentManager.beginTransaction()
         fragmentTransaction.replace(R.id.frame_layout, fragment)
@@ -41,6 +38,4 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-
-
-    }
+}
