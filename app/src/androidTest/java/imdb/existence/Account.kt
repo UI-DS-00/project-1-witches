@@ -1,4 +1,4 @@
-package existence.imdb
+package imdb.existence
 
 class Account
     (var numberAccount: Int, var userName: String, var password: String, var email: String){
