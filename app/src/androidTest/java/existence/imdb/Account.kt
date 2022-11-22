@@ -1,6 +1,6 @@
-package logic.imdb
+package existence.imdb
 
-internal class Account
+class Account
     (var numberAccount: Int, var userName: String, var password: String, var email: String){
 
     init {
