@@ -27,6 +27,12 @@ class MainActivity : AppCompatActivity() {
             true
         }
 
+        // for sign in page
+        val profileFragment = ProfileFragment()
+        val fragmentManager = supportFragmentManager
+        fragmentManager.beginTransaction().add(R.id.frame_layout, profileFragment)
+
+
     }
 
 
