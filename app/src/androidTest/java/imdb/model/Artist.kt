@@ -1,4 +1,4 @@
-package imdb.existence
+package imdb.model
 
 import androidx.room.Entity
 import java.time.Year

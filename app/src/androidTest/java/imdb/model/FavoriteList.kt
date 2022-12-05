@@ -1,4 +1,4 @@
-package imdb.existence
+package imdb.model
 
 class FavoriteList (var numberAccount: Int,
                     var name: String){

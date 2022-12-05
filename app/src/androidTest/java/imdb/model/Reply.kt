@@ -1,4 +1,4 @@
-package imdb.existence
+package imdb.model
 
 class Reply (var numberAccount: Int,
              var comment: Comment,

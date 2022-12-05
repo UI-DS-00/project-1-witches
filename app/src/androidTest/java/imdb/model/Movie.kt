@@ -1,4 +1,4 @@
-package imdb.existence
+package imdb.model
 
 import java.time.Year
 
