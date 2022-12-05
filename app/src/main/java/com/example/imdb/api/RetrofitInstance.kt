@@ -5,14 +5,12 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 object RetrofitInstance {
 
-    private val retrofit by lazy {
+    val api: MovieApi by lazy {
         Retrofit.Builder()
             .baseUrl("https://api.themoviedb.org")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
+            .create(MovieApi::class.java)
     }
 
-    val api: MovieApi by lazy {
-        retrofit.create(MovieApi::class.java)
-    }
 }

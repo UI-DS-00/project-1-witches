@@ -1,16 +1,29 @@
 package com.example.imdb.model
 
-data  class Movie (
+import com.google.gson.annotations.SerializedName
+
+class Movie (
+             @SerializedName("imdb_id")
              var imdbID: String,
+             @SerializedName("title")
              var title: String,
-             var originalLanguage: String,
+             @SerializedName("original_title")
              var originalTitle: String,
+             @SerializedName("original_language")
+             var originalLanguage: String,
+             @SerializedName("adult")
              var adult: Boolean,
+             @SerializedName("release_date")
              var releaseDate: String,
-             var country: ArrayList<String>,
+             @SerializedName("production_countries")
+             var countries: ArrayList<String>,
+             @SerializedName("runtime")
              var runtimeMinutes: Int,
+             @SerializedName("genres")
              var genres: ArrayList<String>,
-             var voteAverage: Double
+             @SerializedName("vote_average ")
+             var voteAverage: Double,
+             var image: String
              ){
 
 //    var comments: ArrayList<Comment>? = null
