@@ -1,21 +1,19 @@
 package imdb.model
 
-import java.time.Year
-
-class Movie (var tConst: String,
-             var titleType: String,
-             var primaryTitle: String,
+data  class Movie (
+             var imdbID: String,
+             var title: String,
+             var originalLanguage: String,
              var originalTitle: String,
-             var isAdult: Boolean,
-             var startYear: Year,
-             var endYear: Year,
-             var country: String,
+             var adult: Boolean,
+             var releaseDate: String,
+             var country: ArrayList<String>,
              var runtimeMinutes: Int,
-             var genres: ArrayList<String>){
+             var genres: ArrayList<String>,
+             var voteAverage: Double
+             ){
 
-    var point: Int? = null
-    var comments: ArrayList<Comment>? = null
-    var replies: ArrayList<Reply>? = null
+//    var comments: ArrayList<Comment>? = null
 
 }
 
