@@ -1,4 +1,4 @@
-package imdb.model
+package com.example.imdb.model
 
 class FavoriteList (var numberAccount: Int,
                     var name: String){

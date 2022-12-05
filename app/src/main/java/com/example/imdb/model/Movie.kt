@@ -1,4 +1,4 @@
-package imdb.model
+package com.example.imdb.model
 
 data  class Movie (
              var imdbID: String,

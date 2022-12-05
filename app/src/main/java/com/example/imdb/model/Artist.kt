@@ -1,4 +1,4 @@
-package imdb.model
+package com.example.imdb.model
 
 import androidx.room.Entity
 import java.time.Year
