@@ -2,8 +2,7 @@ package com.example.imdb.model
 
 import androidx.room.Entity
 import java.time.Year
- 
-@Entity
+
 data class Artist(
      var tCost: String,
      var primaryName: String,

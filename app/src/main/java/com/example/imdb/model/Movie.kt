@@ -2,7 +2,7 @@ package com.example.imdb.model
 
 import com.google.gson.annotations.SerializedName
 
-class Movie (
+data class Movie (
              @SerializedName("imdb_id")
              var imdbID: String,
              @SerializedName("title")

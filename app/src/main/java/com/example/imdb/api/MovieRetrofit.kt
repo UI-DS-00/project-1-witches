@@ -3,7 +3,7 @@ package com.example.imdb.api
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-object RetrofitInstance {
+object MovieRetrofit {
 
     val api: MovieApi by lazy {
         Retrofit.Builder()
