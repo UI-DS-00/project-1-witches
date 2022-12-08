@@ -1,6 +1,7 @@
 package com.example.imdb
 
 import android.content.Intent
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -14,7 +15,6 @@ class StartActivity2 : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         binding = ActivityStart2Binding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)

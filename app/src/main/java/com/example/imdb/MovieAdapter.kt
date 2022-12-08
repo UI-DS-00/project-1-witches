@@ -1,40 +1,51 @@
-package com.example.imdb;
+package com.example.imdb
 
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.TextView;
+import android.content.Context
+//import com.example.imdb.model.Movie.title
+//import com.example.imdb.model.Movie.image
+import androidx.recyclerview.widget.RecyclerView
+import android.view.ViewGroup
+import android.view.LayoutInflater
+import android.view.View
+import android.widget.ImageView
+import com.example.imdb.R
+import com.bumptech.glide.Glide
+import android.widget.TextView
+import androidx.cardview.widget.CardView
+import com.example.imdb.model.Movie
 
-import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.RecyclerView;
+class MovieAdapter(var movieItems: ArrayList<Movie>, var context: Context) :
+    RecyclerView.Adapter<MovieAdapter.ViewHolder>() {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.movie_item, parent, false)
+        return ViewHolder(view)
+    }
 
-public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder>
-{
-    @NonNull
-    @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType)
+    // برای مقدار دهی ایتم ها
+    override fun onBindViewHolder(holder: ViewHolder, position: Int)
     {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.movie_item,parent,false);
-        return new ViewHolder(view);
+        val movieModels = movieItems[position]
+     //   val (_, title, _, _, _, _, _, _, _, _, image) = movieItems[position]
+        holder.txtMovieName.text = movieModels.title
+        Glide.with(context).load(movieModels.image).into(holder.imageView)
+        holder.cardView.setOnClickListener {
+            // NULL
+        }
     }
 
-    @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-
+    override fun getItemCount(): Int {
+        return movieItems.size
     }
 
-    @Override
-    public int getItemCount() {
-        return 0;
-    }
+    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        var txtMovieName: TextView
+        var cardView: CardView
+        var imageView: ImageView
 
-    public class ViewHolder extends RecyclerView.ViewHolder
-    {
-        TextView txtMovieName;
-        public ViewHolder(@NonNull View itemView)
-        {
-            super(itemView);
-            txtMovieName = itemView.findViewById(R.id.movieName);
+        init {
+            txtMovieName = itemView.findViewById(R.id.movieName)
+            imageView = itemView.findViewById(R.id.movieImage)
+            cardView = itemView.findViewById(R.id.cardView)
         }
     }
 }
