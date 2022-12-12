@@ -9,13 +9,15 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.imdb.api.MovieRetrofit
+import com.example.imdb.databinding.FragmentHomeBinding
 import com.example.imdb.model.Movie
 
 
 class HomeFragment : Fragment(R.layout.fragment_home) {
     private lateinit var adapter: MovieAdapter
     private lateinit var recyclerView: RecyclerView
-    var items: ArrayList<Movie> = ArrayList<Movie>()
+
+    private var _binding: FragmentHomeBinding? = null
 
 
     override fun onCreateView(
@@ -24,7 +26,18 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
     ): View? {
         // Inflate the layout for this fragment
        var view :View= inflater.inflate(R.layout.fragment_home, container, false)
-        MovieRetrofit.getMovie()
+
+        _binding = FragmentHomeBinding.inflate(layoutInflater)
+        val binding = _binding!!
+
+        recyclerView = binding.recyclerView
+
+        val homeViewModel = HomeViewModel()
+        val adapter = MovieAdapter(homeViewModel.movieList.value!!.toList() , requireContext())
+        recyclerView.adapter = adapter
+        homeViewModel.movieList.observe(viewLifecycleOwner){
+            adapter.updateMovies(it)
+        }
         return view
 
     }

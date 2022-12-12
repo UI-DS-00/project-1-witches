@@ -9,34 +9,11 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 object MovieRetrofit {
+    const val API_KEY = "4728Bb48a4a73a20e3b4109dc6d55114"
 
-    private val retrofitBuilder = Retrofit.Builder()
+    val retrofitBuilder = Retrofit.Builder()
         .addConverterFactory(GsonConverterFactory.create())
         .baseUrl("https://api.themoviedb.org/")
         .build()
         .create(MovieApi::class.java)!!
-
-    private val retrofitMovie = retrofitBuilder.getMovies()
-
-    fun getMovie(){
-
-        retrofitMovie.enqueue(object : Callback<List<Movie>?> {
-            override fun onResponse(call: Call<List<Movie>?>, response: Response<List<Movie>?>) {
-                val responseBody = response.body()!!
-
-                val movies = StringBuilder()
-
-                for (Movie in responseBody){
-                    movies.append(Movie.title)
-                    movies.append("\n")
-                }
-
-            }
-
-            override fun onFailure(call: Call<List<Movie>?>, t: Throwable) {
-                print("Error")
-            }
-        })
-    }
-
 }

@@ -14,7 +14,7 @@ import android.widget.TextView
 import androidx.cardview.widget.CardView
 import com.example.imdb.model.Movie
 
-class MovieAdapter(var movieItems: ArrayList<Movie>, var context: Context) :
+class MovieAdapter(var movieItems: List<Movie>, var context: Context) :
     RecyclerView.Adapter<MovieAdapter.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.movie_item, parent, false)
@@ -31,6 +31,11 @@ class MovieAdapter(var movieItems: ArrayList<Movie>, var context: Context) :
         holder.cardView.setOnClickListener {
             // NULL
         }
+    }
+
+    fun updateMovies(movies: List<Movie>){
+        movieItems = movies
+        notifyDataSetChanged()
     }
 
     override fun getItemCount(): Int {
