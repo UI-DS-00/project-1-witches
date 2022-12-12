@@ -12,7 +12,7 @@ object MovieRetrofit {
 
     private val retrofitBuilder = Retrofit.Builder()
         .addConverterFactory(GsonConverterFactory.create())
-        .baseUrl("https://api.themoviedb.org")
+        .baseUrl("https://api.themoviedb.org/")
         .build()
         .create(MovieApi::class.java)!!
 
@@ -34,7 +34,7 @@ object MovieRetrofit {
             }
 
             override fun onFailure(call: Call<List<Movie>?>, t: Throwable) {
-                TODO("Not yet implemented")
+                print("Error")
             }
         })
     }

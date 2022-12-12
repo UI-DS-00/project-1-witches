@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.imdb.api.MovieRetrofit
 import com.example.imdb.model.Movie
 
 
@@ -23,8 +24,8 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
     ): View? {
         // Inflate the layout for this fragment
        var view :View= inflater.inflate(R.layout.fragment_home, container, false)
+        MovieRetrofit.getMovie()
         return view
-
 
     }
 
