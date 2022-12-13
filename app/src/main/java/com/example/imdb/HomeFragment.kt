@@ -1,6 +1,7 @@
 package com.example.imdb
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -32,6 +33,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         val adapter = MovieAdapter(homeViewModel.movieList.value!!.toList() , requireContext())
         recyclerView.adapter = adapter
         homeViewModel.movieList.observe(viewLifecycleOwner){
+            Log.d("HomeViewModel", "onCreateView: observe" )
             adapter.updateMovies(it)
         }
         return view
