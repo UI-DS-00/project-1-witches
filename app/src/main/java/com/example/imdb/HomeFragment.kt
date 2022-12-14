@@ -38,6 +38,8 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
             Log.d("HomeViewModel", "onCreateView: observe" )
             adapter.updateMovies(it)
         }
+
+        recyclerView.layoutManager = LinearLayoutManager(requireContext())
         return view
 
     }
