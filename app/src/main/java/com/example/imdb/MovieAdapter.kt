@@ -25,7 +25,6 @@ class MovieAdapter(var movieItems: List<Movie>, var context: Context) :
     override fun onBindViewHolder(holder: ViewHolder, position: Int)
     {
         val movieModels = movieItems[position]
-     //   val (_, title, _, _, _, _, _, _, _, _, image) = movieItems[position]
         holder.txtMovieName.text = movieModels.title
         Glide.with(context).load(movieModels.image).into(holder.imageView)
         holder.cardView.setOnClickListener {
