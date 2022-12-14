@@ -30,4 +30,14 @@ class HomeViewModel : ViewModel() {
             }
         }
     }
+
+    fun searchBaseYear(): MutableLiveData<List<Movie>>? {
+        var movies: MutableLiveData<List<Movie>>? = null
+
+        movieList.value!!.forEach{
+
+        }
+
+        return movies
+    }
 }

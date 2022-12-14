@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.imdb.databinding.FragmentHomeBinding
 
@@ -36,6 +37,8 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
             Log.d("HomeViewModel", "onCreateView: observe" )
             adapter.updateMovies(it)
         }
+
+        recyclerView.layoutManager = LinearLayoutManager(requireContext())
         return view
 
     }
