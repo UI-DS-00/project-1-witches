@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.imdb.api.Retrofit
 import com.example.imdb.api.Retrofit.API_KEY
+import com.example.imdb.model.DataMovie
 import com.example.imdb.model.Movie
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -23,7 +24,7 @@ class HomeViewModel : ViewModel() {
                     "init:Response " + response.body() + "  code:  " + response.code()
                 + "\n " + response.errorBody().toString()
                 )
-                movieList.postValue(response.body()!!)
+                movieList.postValue(response.body()!!.dataMovies)
             } catch (e: Exception) {
                 e.printStackTrace()
                 Log.e("HomeViewModel", "init:ERROR ", e)

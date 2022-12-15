@@ -3,7 +3,7 @@ package com.example.imdb.model
 import com.google.gson.annotations.SerializedName
 
 data class Movie (
-             @SerializedName("imdb_id")
+             @SerializedName("id")
              var imdbID: String,
              @SerializedName("title")
              var title: String,
@@ -23,6 +23,7 @@ data class Movie (
              var genres: ArrayList<String>,
              @SerializedName("vote_average ")
              var voteAverage: Double,
+             @SerializedName("poster_path")
              var image: String
              ){
 

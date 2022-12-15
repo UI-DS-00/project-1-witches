@@ -12,6 +12,7 @@ import com.example.imdb.R
 import com.bumptech.glide.Glide
 import android.widget.TextView
 import androidx.cardview.widget.CardView
+import com.example.imdb.model.DataMovie
 import com.example.imdb.model.Movie
 
 class MovieAdapter(var movieItems: List<Movie>, var context: Context) :

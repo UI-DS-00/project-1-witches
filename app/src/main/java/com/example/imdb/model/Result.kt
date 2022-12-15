@@ -1,6 +1,9 @@
 package com.example.imdb.model
 
+import com.google.gson.annotations.SerializedName
 data class Result(
+    @SerializedName("results")
+
     val adult: Boolean,
     val backdrop_path: String,
     val genre_ids: List<Int>,

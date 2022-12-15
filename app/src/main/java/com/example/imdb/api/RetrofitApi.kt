@@ -3,6 +3,7 @@ package com.example.imdb.api
 import android.graphics.pdf.PdfDocument.Page
 import com.example.imdb.model.Account
 import com.example.imdb.model.Artist
+import com.example.imdb.model.DataMovie
 import com.example.imdb.model.Movie
 import org.intellij.lang.annotations.Language
 import retrofit2.Call
@@ -13,7 +14,7 @@ interface RetrofitApi {
 
 
     @GET("/3/movie/popular")
-    suspend fun getMovies(@Query("api_key") apiKey: String): Call<List<Movie>>
+    suspend fun getMovies(@Query("api_key") apiKey: String): Call<MovieResponse>
 
     @GET("accounts")
     fun getAccount(): Call<List<Account>>
