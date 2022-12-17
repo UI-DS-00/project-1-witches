@@ -15,9 +15,8 @@ class HomeViewModel : ViewModel() {
     val movieList = MutableLiveData<List<Movie>>()
 
     init {
-        movieList.value = emptyList()
         viewModelScope.launch(Dispatchers.IO) {
-            try {
+            /*try {
                 val response = Retrofit.getClient().getMovies(apiKey = API_KEY).execute()
                 Log.d(
                     "HomeViewModel",
@@ -28,14 +27,14 @@ class HomeViewModel : ViewModel() {
             } catch (e: Exception) {
                 e.printStackTrace()
                 Log.e("HomeViewModel", "init:ERROR ", e)
-            }
+            }*/
         }
     }
 
     fun searchBaseYear(): MutableLiveData<List<Movie>>? {
         var movies: MutableLiveData<List<Movie>>? = null
 
-        movieList.value!!.forEach{
+        movieList.value!!.forEach {
 
         }
 

@@ -14,7 +14,7 @@ interface RetrofitApi {
 
 
     @GET("/3/movie/popular")
-    suspend fun getMovies(@Query("api_key") apiKey: String): Call<MovieResponse>
+     fun getMovies(@Query("api_key") apiKey: String): Call<MovieResponse>
 
     @GET("accounts")
     fun getAccount(): Call<List<Account>>
