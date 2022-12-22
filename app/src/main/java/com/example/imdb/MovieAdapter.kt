@@ -24,8 +24,7 @@ class MovieAdapter(var movieItems: MutableList<Movie>, var context: Context) :
     }
 
     // برای مقدار دهی ایتم ها
-    override fun onBindViewHolder(holder: ViewHolder, position: Int)
-    {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val movieModels = movieItems[position]
         holder.bind(movieModels)
 

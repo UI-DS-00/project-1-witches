@@ -8,17 +8,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.imdb.api.TestMovieApiInterface
-import com.example.imdb.api.TestMovieApiService
-import com.example.imdb.api.TestMovieResponse
 import com.example.imdb.databinding.FragmentHomeBinding
 import com.example.imdb.model.Movie
-import com.example.imdb.model.TestMovie
-import com.example.imdb.model.TestMovieAdapter
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
-
 
 class HomeFragment : Fragment(R.layout.fragment_home) {
     private lateinit var adapter: MovieAdapter
@@ -31,7 +22,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-       var view :View= inflater.inflate(R.layout.fragment_home, container, false)
+        var view: View = inflater.inflate(R.layout.fragment_home, container, false)
         _binding = FragmentHomeBinding.inflate(layoutInflater)
         val binding = _binding!!
         recyclerView = binding.recyclerView
@@ -39,23 +30,23 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         val homeViewModel = HomeViewModel()
         val adapter = MovieAdapter(
             mutableListOf(
-            Movie(
-                "asd", "Asd", "asd", "Asd", true, "sad",
-                arrayListOf("asd"), 12, arrayListOf("ads"), 12.0, ""
-            )
-        ) , requireContext())
-        recyclerView.adapter = adapter
+                Movie(
+                    "asd", "Asd", "asd", "Asd", true, "sad",
+                    arrayListOf("asd"), 12, arrayListOf("ads"), 12.0, ""
+                )
+            ), requireContext()
+        )
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
+        recyclerView.adapter = adapter
 
-        homeViewModel.movieList.observe(viewLifecycleOwner){
-            Log.d("HomeViewModel", "onCreateView: observe" )
+        homeViewModel.movieList.observe(viewLifecycleOwner) {
+            Log.d("HomeViewModel", "onCreateView: observe")
 
-            if(it.isNotEmpty())
-            {
+            if (it.isNotEmpty()) {
                 (recyclerView.adapter as MovieAdapter).updateMovies(it)
             }
 
-           Log.d("updateMovie", "$it")
+            Log.d("updateMovie", "$it")
             Log.d("adapterMovieItem", "${adapter.movieItems}")
 
         }
