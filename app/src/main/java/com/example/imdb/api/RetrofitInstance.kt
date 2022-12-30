@@ -9,6 +9,7 @@ object RetrofitInstance {
     const val BASE_URL = "https://api.themoviedb.org/"
 
     fun getRetrofitInstance(): Retrofit{
+
         return Retrofit.Builder()
             .baseUrl(BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())

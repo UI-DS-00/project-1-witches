@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.imdb.databinding.FragmentHomeBinding
 import com.example.imdb.model.Movie
 
-class HomeFragment : Fragment(R.layout.fragment_home) {
+class   HomeFragment : Fragment(R.layout.fragment_home) {
     private lateinit var adapter: MovieAdapter
     private lateinit var recyclerView: RecyclerView
 
