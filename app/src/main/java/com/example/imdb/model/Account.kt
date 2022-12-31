@@ -6,6 +6,14 @@ class Account(
     var password: String,
     var email: String){
 
+    init {
+        id = number++
+    }
+
+    companion object{
+        var number = 1
+    }
+
 
 
     var favoriteLists: ArrayList<FavoriteList>? = null
