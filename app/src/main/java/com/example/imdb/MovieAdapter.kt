@@ -17,7 +17,7 @@ import kotlinx.android.synthetic.main.movie_item.view.*
 class MovieAdapter(var movieItems: List<Movie>, var context: Context) :
     RecyclerView.Adapter<MovieAdapter.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.movie_item, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.movie_item2, parent, false)
         return ViewHolder(view)
     }
 
@@ -44,15 +44,23 @@ class MovieAdapter(var movieItems: List<Movie>, var context: Context) :
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var txtMovieName: TextView
         var textMovieVote : TextView
-        var cardView: CardView
+      //  var cardView: CardView
         var imageView: ImageView
 
         init {
 
+            /*
           txtMovieName = itemView.findViewById(R.id.movieName)
           textMovieVote = itemView.findViewById(R.id.movieVote)
           imageView = itemView.findViewById(R.id.movieImage)
           cardView = itemView.findViewById(R.id.cardView)
+
+             */
+
+            txtMovieName = itemView.findViewById(R.id.item2_movie_title)
+            textMovieVote = itemView.findViewById(R.id.item2_movie_vote)
+            imageView = itemView.findViewById(R.id.item2_movie_img)
+
         }
 
         fun bind(movieModels: Movie) {
@@ -61,9 +69,12 @@ class MovieAdapter(var movieItems: List<Movie>, var context: Context) :
             val IMAGE_BASE = "https://image.tmdb.org/t/p/w500/"
             Glide.with(imageView.context).load(IMAGE_BASE + movieModels.image).into(imageView)
 
+            /*
            cardView.setOnClickListener {
                 // NULL
             }
+
+             */
         }
     }
 }

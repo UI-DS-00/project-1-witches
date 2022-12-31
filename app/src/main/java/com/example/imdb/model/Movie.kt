@@ -24,8 +24,10 @@ class Movie (
              @SerializedName("vote_average ")
              var voteAverage: Double,
              @SerializedName("poster_path")
-             var image: String
-             ){
+             var image: String,
+             @SerializedName("backdrop_path")
+             var backdropImage: String
+){
 
 //    var comments: ArrayList<Comment>? = null
 
