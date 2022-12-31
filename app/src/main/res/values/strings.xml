@@ -11,4 +11,6 @@
     <string name="username">username</string>
     <string name="actors">Actors</string>
     <string name="personnel">personnel</string>
+    <string name="suggested_by_imdb">Suggested by IMDb :</string>
+
 </resources>
