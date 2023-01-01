@@ -8,13 +8,17 @@ object RetrofitInstance {
     const val API_KEY = "4728bb48a4a73a20e3b4109dc6d55114"
     const val BASE_URL = "https://api.themoviedb.org/"
 
-    fun getRetrofitInstance(): Retrofit{
-
-        return Retrofit.Builder()
-            .baseUrl(BASE_URL)
-            .addConverterFactory(GsonConverterFactory.create())
-            .build()
+    var client: RetrofitService? = null
+    fun getRetrofitInstance(): RetrofitService? {
+        if (client == null)
+            client = Retrofit.Builder()
+                .baseUrl(BASE_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build()
+                .create(RetrofitService::class.java)
+        return client
     }
+
 //    fun getData(): RetrofitApi {
 ////        val okHttpClient = OkHttpClient().newBuilder()
 ////            .connectTimeout(60, TimeUnit.SECONDS)
