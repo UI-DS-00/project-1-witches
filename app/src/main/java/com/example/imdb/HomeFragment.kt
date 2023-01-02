@@ -8,13 +8,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.imdb.api.TestMovieApiInterface
-import com.example.imdb.api.TestMovieApiService
-import com.example.imdb.api.TestMovieResponse
 import com.example.imdb.databinding.FragmentHomeBinding
 import com.example.imdb.model.Movie
-import com.example.imdb.model.TestMovie
-import com.example.imdb.model.TestMovieAdapter
+import com.example.imdb.HomeViewModel
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

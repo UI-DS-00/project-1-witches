@@ -9,10 +9,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.cardview.widget.CardView
 import com.bumptech.glide.Glide
 import com.example.imdb.model.Movie
-import kotlinx.android.synthetic.main.movie_item.view.*
 
 class MovieAdapter(var movieItems: List<Movie>, var context: Context) :
     RecyclerView.Adapter<MovieAdapter.ViewHolder>() {
